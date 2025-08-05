@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function App({ Component, pageProps }) {
         <AnimatePresence mode='wait'>
           <Component key={router.asPath} {...pageProps} />
           <SpeedInsights />
+          <Analytics />
         </AnimatePresence>
         <Footer />
       </main>
