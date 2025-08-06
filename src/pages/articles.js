@@ -105,15 +105,14 @@ const articles = () => {
                         summary='Learn how to build a custom pagination component in ReactJS from scratch. 
                         Follow this step-by-step guide to integrate Pagination component in your ReactJS project.'
                         time='9 min read'
-                        link='/'
+                        link='/blogs/pagination-component-reactjs'
                         img={article1}
                     />
                     <FeaturedArticles 
-                        title='Build A Custom Pagination Component In Reactjs From Scratch'
-                        summary='Learn how to build a custom pagination component in ReactJS from scratch. 
-                        Follow this step-by-step guide to integrate Pagination component in your ReactJS project.'
-                        time='9 min read'
-                        link='/'
+                        title='Create Loading Screen In React JS'
+                        summary='How to create a beautiful loading screen in React JS using best practices.'
+                        time='7 min read'
+                        link='/blogs/loading-screen-reactjs'
                         img={article2}
                     />
                 </ul>
@@ -122,43 +121,43 @@ const articles = () => {
                     <Article 
                         title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
                         date='March 22, 2023'
-                        link='/'
+                        link='/blogs/form-validation-reactjs'
                         img={article3}
                     />
                     <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
+                        title='Create Modal Component In React Using React Portals'
+                        date='April 10, 2023'
+                        link='/blogs/modal-component-react-portals'
                         img={article4}
                     />
                     <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
+                        title='Smooth Scrolling In ReactJS'
+                        date='May 5, 2023'
+                        link='/blogs/smooth-scrolling-reactjs'
                         img={article5}
                     />
                     <Article 
                         title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
                         date='March 22, 2023'
-                        link='/'
+                        link='/blogs/form-validation-reactjs'
                         img={article3}
                     />
                     <Article 
                         title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
                         date='March 22, 2023'
-                        link='/'
+                        link='/blogs/form-validation-reactjs'
                         img={article3}
                     />
                     <Article 
                         title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
                         date='March 22, 2023'
-                        link='/'
+                        link='/blogs/form-validation-reactjs'
                         img={article3}
                     />
                     <Article 
                         title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
                         date='March 22, 2023'
-                        link='/'
+                        link='/blogs/form-validation-reactjs'
                         img={article3}
                     />
                 </ul>
