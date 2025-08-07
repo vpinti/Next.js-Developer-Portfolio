@@ -1,7 +1,9 @@
 ---
 title: "Guida ai React Server Components"
-date: "2024-07-30"
-coverImage: "https://placehold.co/1200x400.png"
+date: "July 30, 2024"
+coverImage: "/images/articles/create modal component in react using react portals.png" 
+coverImageWidth: 800
+coverImageHeight: 600
 excerpt: "I Server Components sono una nuova funzionalità di React che ci permette di renderizzare componenti lato server, riducendo il bundle JavaScript inviato al client."
 category: "React"
 tags: ["React", "Next.js", "Server Components"]

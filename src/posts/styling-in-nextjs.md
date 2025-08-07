@@ -1,7 +1,9 @@
 ---
 title: "Opzioni di Stile in Next.js: Da Tailwind a CSS-in-JS"
-date: "2024-07-25"
-coverImage: "https://placehold.co/1200x400.png"
+date: "July 25, 2024"
+coverImage: "/images/articles/create modal component in react using react portals.png"
+coverImageWidth: 800
+coverImageHeight: 600
 excerpt: "Next.js offre flessibilità incredibile quando si tratta di styling. Esploriamo le opzioni più popolari per dare stile alle tue applicazioni."
 category: "CSS"
 tags: ["CSS", "Next.js", "Tailwind CSS", "Styled Components"]

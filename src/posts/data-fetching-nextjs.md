@@ -1,7 +1,9 @@
 ---
 title: "Data Fetching in Next.js 14 con l'App Router"
-date: "2024-07-20"
-coverImage: "https://placehold.co/1200x400.png"
+date: "August 20, 2024"
+coverImage: "/images/articles/create modal component in react using react portals.png"
+coverImageWidth: 800
+coverImageHeight: 600
 excerpt: "L'App Router di Next.js ha rivoluzionato il data fetching, integrandolo direttamente nel lifecycle di React con i Server Components."
 category: "Next.js"
 tags: ["Next.js", "Data Fetching", "React"]

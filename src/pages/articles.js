@@ -5,18 +5,16 @@ import Image from 'next/image'
 import { motion, useMotionValue } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
+import { getAllPosts } from '@/lib/posts';
 import article1 from '../../public/images/articles/pagination component in reactjs.jpg'
 import article2 from '../../public/images/articles/create loading screen in react js.jpg'
-import article3 from '../../public/images/articles/create modal component in react using react portals.png'
-import article4 from '../../public/images/articles/form validation in reactjs using custom react hook.png'
-import article5 from '../../public/images/articles/smooth scrolling in reactjs.png'
 import TransitionEffect from '@/components/TransitionEffect'
 
-const articles = () => {
+const articles = ({ posts }) => {
 
     const FramerImage = motion(Image)
 
-    const MovingImg = ({title, img, link}) => {
+    const MovingImg = ({title, img, imgWidth, imgHeight, link}) => {
 
         const x = useMotionValue(0)
         const y = useMotionValue(0)
@@ -35,7 +33,7 @@ const articles = () => {
         }
 
         return(
-            <Link href={link} target='_blank'
+            <Link href={link}
                 onMouseMove={handleMouse}
                 onMouseLeave={handleMouseLeave}
             >
@@ -45,7 +43,9 @@ const articles = () => {
                     initial={{opacity:0}}
                     whileInView={{opacity:1, transition:{duration: 0.2}}}
                     ref={imageRef} 
-                    src={img} 
+                    src={img}
+                    width={imgWidth}
+                    height={imgHeight}
                     alt={title} 
                     className='z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden' 
                 />
@@ -53,7 +53,7 @@ const articles = () => {
         )
     }
 
-    const Article = ({img, title, date, link}) => {
+    const Article = ({img, imgWidth, imgHeight, title, date, link}) => {
         return (
             <motion.li 
             initial={{y:200}}
@@ -62,7 +62,7 @@ const articles = () => {
             className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center
              justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light
              dark:bg-dark dark:text-light sm:flex-col'>
-                <MovingImg title={title} img={img} link={link} />
+                <MovingImg title={title} img={img} link={link} imgWidth={imgWidth} imgHeight={imgHeight} />
                 <span className='text-primary dark:text-primaryDark font-semibold pl-4 sm:self-start sm:pl-0 xs:text-sm'>{date}</span>
             </motion.li>
         )
@@ -72,7 +72,7 @@ const articles = () => {
         return (
             <li className='relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light'>
                 <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl'/>
-                <Link href={link} target='_blank' className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
+                <Link href={link} className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
                     <FramerImage src={img} alt={title} className='w-full h-auto'
                       whileHover={{scale:1.05}}
                       transition={{duration:0.2}}
@@ -80,7 +80,7 @@ const articles = () => {
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' 
                     />
                 </Link>
-                <Link href={link} target='_blank'>
+                <Link href={link}>
                     <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg'>{title}</h2>
                 </Link>
                 <p className='text-sm mb-2'>{summary}</p>
@@ -118,53 +118,31 @@ const articles = () => {
                 </ul>
                 <h2 className='font-bold text-4xl w-full text-center my-16 mt-32'>All Articles</h2>
                 <ul>
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/blogs/form-validation-reactjs'
-                        img={article3}
-                    />
-                    <Article 
-                        title='Create Modal Component In React Using React Portals'
-                        date='April 10, 2023'
-                        link='/blogs/modal-component-react-portals'
-                        img={article4}
-                    />
-                    <Article 
-                        title='Smooth Scrolling In ReactJS'
-                        date='May 5, 2023'
-                        link='/blogs/smooth-scrolling-reactjs'
-                        img={article5}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/blogs/form-validation-reactjs'
-                        img={article3}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/blogs/form-validation-reactjs'
-                        img={article3}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/blogs/form-validation-reactjs'
-                        img={article3}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/blogs/form-validation-reactjs'
-                        img={article3}
-                    />
+                    {posts.map(post => (
+                        <Article 
+                            title={post.title}
+                            date={post.date}
+                            link={`/blogs/${post.slug}`}
+                            img={post.coverImage}
+                            imgWidth={post.coverImageWidth}
+                            imgHeight={post.coverImageHeight}
+                            key={post.slug}
+                        />
+                    ))}
                 </ul>
             </Layout>
         </main>
     </>
   )
+}
+
+export async function getStaticProps() {
+    const posts = getAllPosts();
+    return {
+        props: {
+            posts,
+        },
+    };
 }
 
 export default articles

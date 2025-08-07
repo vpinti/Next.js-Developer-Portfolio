@@ -4,9 +4,12 @@ import { Badge } from "@/components/Badge";
 import MarkdownRenderer from "@/components/markdown-renderer";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { CalendarDays, Clock } from "lucide-react";
+import TransitionEffect from '@/components/TransitionEffect'
 
 export default function BlogPost({ post }) {
   return (
+    <>
+    <TransitionEffect />
     <div className="bg-background text-foreground dark:bg-background-dark dark:text-foreground-dark min-h-screen dark:text-light">
       <main className="py-8 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,6 +74,7 @@ export default function BlogPost({ post }) {
         </div>
       </main>
     </div>
+    </>
   );
 }
 

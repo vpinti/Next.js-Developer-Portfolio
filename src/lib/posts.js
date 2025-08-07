@@ -36,8 +36,12 @@ export function getAllPosts() {
   const posts = filenames
     .map((filename) => getPostBySlug(filename))
     .filter((post) => post !== null);
-  
-  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+
+    return posts.sort((post1, post2) => {
+    const date1 = new Date(post1.date);
+    const date2 = new Date(post2.date);
+    return date2 - date1; // Ordina dalla più recente alla meno recente
+  });
 }
 
 export function getAllCategories() {
