@@ -28,8 +28,9 @@ export default function TagPage({ tag, posts }) {
                   <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                     <Image
                       src={post.coverImage}
-                      alt={`Copertina per ${post.title}`}
+                      alt={`Cover for ${post.title}`}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 896px"
                       className="object-cover"
                     />
                   </div>

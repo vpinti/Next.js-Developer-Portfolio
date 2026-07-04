@@ -58,8 +58,9 @@ export default function BlogPost({ post }) {
             <div className="relative w-full h-96 rounded-lg overflow-hidden my-8 shadow-lg">
               <Image
                 src={post.coverImage}
-                alt={`Copertina per ${post.title}`}
+                alt={`Cover for ${post.title}`}
                 fill
+                sizes="(max-width: 1024px) 100vw, 896px"
                 className="object-cover"
               />
             </div>
