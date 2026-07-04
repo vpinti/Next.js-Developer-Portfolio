@@ -6,11 +6,9 @@ import { motion, useMotionValue } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 import { getAllPosts } from '@/lib/posts';
-import article1 from '../../public/images/articles/pagination component in reactjs.jpg'
-import article2 from '../../public/images/articles/create loading screen in react js.jpg'
 import TransitionEffect from '@/components/TransitionEffect'
 
-const articles = ({ posts }) => {
+const articles = ({ posts, featured }) => {
 
     const FramerImage = motion(Image)
 
@@ -68,16 +66,16 @@ const articles = ({ posts }) => {
         )
     }
 
-    const FeaturedArticles = ({img, title, time, summary, link}) => {
+    const FeaturedArticles = ({img, imgWidth, imgHeight, title, time, summary, link}) => {
         return (
             <li className='relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light'>
                 <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl'/>
                 <Link href={link} className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
-                    <FramerImage src={img} alt={title} className='w-full h-auto'
+                    <FramerImage src={img} width={imgWidth} height={imgHeight} alt={title} className='w-full h-auto'
                       whileHover={{scale:1.05}}
                       transition={{duration:0.2}}
                       priority
-                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' 
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
                     />
                 </Link>
                 <Link href={link}>
@@ -100,21 +98,18 @@ const articles = ({ posts }) => {
             <Layout className='pt-16'>
                 <AnimatedText text='Words Can Change The World!' className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
                 <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
-                    <FeaturedArticles 
-                        title='Build A Custom Pagination Component In Reactjs From Scratch'
-                        summary='Learn how to build a custom pagination component in ReactJS from scratch. 
-                        Follow this step-by-step guide to integrate Pagination component in your ReactJS project.'
-                        time='9 min read'
-                        link='/blogs/pagination-component-reactjs'
-                        img={article1}
-                    />
-                    <FeaturedArticles 
-                        title='Create Loading Screen In React JS'
-                        summary='How to create a beautiful loading screen in React JS using best practices.'
-                        time='7 min read'
-                        link='/blogs/loading-screen-reactjs'
-                        img={article2}
-                    />
+                    {featured.map(post => (
+                        <FeaturedArticles
+                            key={post.slug}
+                            title={post.title}
+                            summary={post.excerpt}
+                            time={`${post.readingTime} min di lettura`}
+                            link={`/blogs/${post.slug}`}
+                            img={post.coverImage}
+                            imgWidth={post.coverImageWidth}
+                            imgHeight={post.coverImageHeight}
+                        />
+                    ))}
                 </ul>
                 <h2 className='font-bold text-4xl w-full text-center my-16 mt-32'>All Articles</h2>
                 <ul>
@@ -137,10 +132,18 @@ const articles = ({ posts }) => {
 }
 
 export async function getStaticProps() {
-    const posts = getAllPosts();
+    // Escludo il contenuto markdown dal payload della lista (non serve qui)
+    const stripContent = ({ content, ...rest }) => rest;
+    const allPosts = getAllPosts().map(stripContent);
+
+    // Featured = post con `featured: true` nel frontmatter; fallback ai 2 più recenti
+    const flagged = allPosts.filter((post) => post.featured);
+    const featured = (flagged.length > 0 ? flagged : allPosts).slice(0, 2);
+
     return {
         props: {
-            posts,
+            posts: allPosts,
+            featured,
         },
     };
 }
