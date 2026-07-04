@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import Logo from './Logo'
 import { useRouter } from 'next/router'
-import {DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, PinterestIcon, SunIcon, TwitterIcon} from './Icons'
+import {GithubIcon, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon} from './Icons'
 import {motion} from 'framer-motion'
 import useThemeSwitcher from './hooks/useThemeSwitcher'
 
@@ -93,21 +93,6 @@ const NavBar = () => {
                     >
                         <LinkedInIcon />
                     </motion.a>
-                    <motion.a href="https://pinterest.com" target={"_blank"}
-                    className='w-6 mx-3 bg-light rounded-full'
-                    whileHover={{y:-2}}
-                    whileTap={{scale:0.9}}
-                    >
-                        <PinterestIcon />
-                    </motion.a>
-                    <motion.a href="https://dribbble.com/" target={"_blank"}
-                    className='w-6 ml-3'
-                    whileHover={{y:-2}}
-                    whileTap={{scale:0.9}}
-                    >
-                        <DribbbleIcon />
-                    </motion.a>
-
                     <button
                         onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
                         className={`ml-3 flex items-center justify-center rounded-full p-1
@@ -158,21 +143,6 @@ const NavBar = () => {
                         >
                             <LinkedInIcon />
                         </motion.a>
-                        <motion.a href="https://pinterest.com" target={"_blank"}
-                        className='w-6 mx-3 sm:mx-1 bg-light rounded-full'
-                        whileHover={{y:-2}}
-                        whileTap={{scale:0.9}}
-                        >
-                            <PinterestIcon />
-                        </motion.a>
-                        <motion.a href="https://dribbble.com/" target={"_blank"}
-                        className='w-6 ml-3 sm:mx-1'
-                        whileHover={{y:-2}}
-                        whileTap={{scale:0.9}}
-                        >
-                            <DribbbleIcon />
-                        </motion.a>
-
                         <button
                             onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
                             className={`ml-3 flex items-center justify-center rounded-full p-1
