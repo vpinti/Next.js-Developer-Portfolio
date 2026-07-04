@@ -5,18 +5,14 @@ import Image from 'next/image'
 import { motion, useMotionValue } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
-import article1 from '../../public/images/articles/pagination component in reactjs.jpg'
-import article2 from '../../public/images/articles/create loading screen in react js.jpg'
-import article3 from '../../public/images/articles/create modal component in react using react portals.png'
-import article4 from '../../public/images/articles/form validation in reactjs using custom react hook.png'
-import article5 from '../../public/images/articles/smooth scrolling in reactjs.png'
+import { getAllPosts } from '@/lib/posts';
 import TransitionEffect from '@/components/TransitionEffect'
 
-const articles = () => {
+const articles = ({ posts, featured }) => {
 
-    const FramerImage = motion(Image)
+    const FramerImage = motion.create(Image)
 
-    const MovingImg = ({title, img, link}) => {
+    const MovingImg = ({title, img, imgWidth, imgHeight, link}) => {
 
         const x = useMotionValue(0)
         const y = useMotionValue(0)
@@ -35,7 +31,7 @@ const articles = () => {
         }
 
         return(
-            <Link href={link} target='_blank'
+            <Link href={link}
                 onMouseMove={handleMouse}
                 onMouseLeave={handleMouseLeave}
             >
@@ -45,7 +41,9 @@ const articles = () => {
                     initial={{opacity:0}}
                     whileInView={{opacity:1, transition:{duration: 0.2}}}
                     ref={imageRef} 
-                    src={img} 
+                    src={img}
+                    width={imgWidth}
+                    height={imgHeight}
                     alt={title} 
                     className='z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden' 
                 />
@@ -53,7 +51,7 @@ const articles = () => {
         )
     }
 
-    const Article = ({img, title, date, link}) => {
+    const Article = ({img, imgWidth, imgHeight, title, date, link}) => {
         return (
             <motion.li 
             initial={{y:200}}
@@ -62,29 +60,31 @@ const articles = () => {
             className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center
              justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light
              dark:bg-dark dark:text-light sm:flex-col'>
-                <MovingImg title={title} img={img} link={link} />
+                <MovingImg title={title} img={img} link={link} imgWidth={imgWidth} imgHeight={imgHeight} />
                 <span className='text-primary dark:text-primaryDark font-semibold pl-4 sm:self-start sm:pl-0 xs:text-sm'>{date}</span>
             </motion.li>
         )
     }
 
-    const FeaturedArticles = ({img, title, time, summary, link}) => {
+    const FeaturedArticles = ({img, imgWidth, imgHeight, title, time, summary, link, reverse}) => {
         return (
-            <li className='relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light'>
+            <li className={`relative w-full flex items-stretch p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light lg:flex-col ${reverse ? 'flex-row-reverse' : 'flex-row'}`}>
                 <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl'/>
-                <Link href={link} target='_blank' className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
-                    <FramerImage src={img} alt={title} className='w-full h-auto'
+                <Link href={link} className='w-2/5 h-56 md:h-48 cursor-pointer overflow-hidden rounded-lg lg:w-full'>
+                    <FramerImage src={img} width={imgWidth} height={imgHeight} alt={title} className='w-full h-full object-cover'
                       whileHover={{scale:1.05}}
                       transition={{duration:0.2}}
                       priority
-                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw' 
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 40vw'
                     />
                 </Link>
-                <Link href={link} target='_blank'>
-                    <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg'>{title}</h2>
-                </Link>
-                <p className='text-sm mb-2'>{summary}</p>
-                <span className='text-primary dark:text-primaryDark font-semibold'>{time}</span>
+                <div className={`w-3/5 flex flex-col justify-center lg:w-full lg:pt-4 ${reverse ? 'pr-6 lg:pr-0' : 'pl-6 lg:pl-0'}`}>
+                    <Link href={link}>
+                        <h2 className='capitalize text-2xl font-bold hover:underline xs:text-lg'>{title}</h2>
+                    </Link>
+                    <p className='text-sm my-2'>{summary}</p>
+                    <span className='text-primary dark:text-primaryDark font-semibold'>{time}</span>
+                </div>
             </li>
         )
     }
@@ -92,80 +92,65 @@ const articles = () => {
   return (
     <>
         <Head>
-            <title>Vittorio Pinti | Articles Page</title>
-            <meta name='description' content=''/>
+            <title>Vittorio Pinti | Articles</title>
+            <meta name='description' content='Articles by Vittorio Pinti on backend, APIs, CI/CD and web development.'/>
+            <meta property='og:title' content='Vittorio Pinti | Articles' />
+            <meta property='og:description' content='Articles on backend, APIs, CI/CD and web development.' />
         </Head>
         <TransitionEffect />
         <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
             <Layout className='pt-16'>
                 <AnimatedText text='Words Can Change The World!' className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
-                <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
-                    <FeaturedArticles 
-                        title='Build A Custom Pagination Component In Reactjs From Scratch'
-                        summary='Learn how to build a custom pagination component in ReactJS from scratch. 
-                        Follow this step-by-step guide to integrate Pagination component in your ReactJS project.'
-                        time='9 min read'
-                        link='/'
-                        img={article1}
-                    />
-                    <FeaturedArticles 
-                        title='Build A Custom Pagination Component In Reactjs From Scratch'
-                        summary='Learn how to build a custom pagination component in ReactJS from scratch. 
-                        Follow this step-by-step guide to integrate Pagination component in your ReactJS project.'
-                        time='9 min read'
-                        link='/'
-                        img={article2}
-                    />
+                <ul className='flex flex-col gap-12 lg:gap-8'>
+                    {featured.map((post, i) => (
+                        <FeaturedArticles
+                            key={post.slug}
+                            reverse={i % 2 === 1}
+                            title={post.title}
+                            summary={post.excerpt}
+                            time={`${post.readingTime} min read`}
+                            link={`/blogs/${post.slug}`}
+                            img={post.coverImage}
+                            imgWidth={post.coverImageWidth}
+                            imgHeight={post.coverImageHeight}
+                        />
+                    ))}
                 </ul>
                 <h2 className='font-bold text-4xl w-full text-center my-16 mt-32'>All Articles</h2>
                 <ul>
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
-                        img={article3}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
-                        img={article4}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
-                        img={article5}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
-                        img={article3}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
-                        img={article3}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
-                        img={article3}
-                    />
-                    <Article 
-                        title='Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling'
-                        date='March 22, 2023'
-                        link='/'
-                        img={article3}
-                    />
+                    {posts.map(post => (
+                        <Article 
+                            title={post.title}
+                            date={post.date}
+                            link={`/blogs/${post.slug}`}
+                            img={post.coverImage}
+                            imgWidth={post.coverImageWidth}
+                            imgHeight={post.coverImageHeight}
+                            key={post.slug}
+                        />
+                    ))}
                 </ul>
             </Layout>
         </main>
     </>
   )
+}
+
+export async function getStaticProps() {
+    // Escludo il contenuto markdown dal payload della lista (non serve qui)
+    const stripContent = ({ content, ...rest }) => rest;
+    const allPosts = getAllPosts().map(stripContent);
+
+    // Featured = post con `featured: true` nel frontmatter; fallback ai 2 più recenti
+    const flagged = allPosts.filter((post) => post.featured);
+    const featured = (flagged.length > 0 ? flagged : allPosts).slice(0, 2);
+
+    return {
+        props: {
+            posts: allPosts,
+            featured,
+        },
+    };
 }
 
 export default articles

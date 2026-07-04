@@ -10,12 +10,50 @@ module.exports = {
     extend: {
       fontFamily: {
         mont: ['var(--font-mont)', ...fontFamily.sans],
+        headline: ['var(--font-mont)', ...fontFamily.sans],
+        code: ['"Source Code Pro"', 'monospace'],
       },
       colors: {
         dark: "#1b1b1b",
         light: "#f5f5f5",
-        primary: "#B63E96", // 240,86,199
+        primary: {
+          DEFAULT: "#B63E96", // 240,86,199
+          foreground: 'hsl(var(--primary-foreground))',
+        },
         primaryDark: "#58E6D9", // 80,230,217
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        tag: {
+          DEFAULT: 'hsl(var(--tag-primary))',
+          foreground: 'hsl(var(--tag-foreground))',
+        }
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite'

@@ -32,7 +32,8 @@ const Experience = () => {
     const ref = useRef(null)
     const {scrollYProgress} = useScroll({
         target: ref,
-        offset: ['start end', 'center start']
+        offset: ['start end', 'center start'],
+        layoutEffect: false
     })
 
   return (
@@ -44,55 +45,24 @@ const Experience = () => {
         <div className='w-[75%] mx-auto relative lg:w-[90%] md:w-full' ref={ref}>
             <motion.div style={{scaleY: scrollYProgress}} className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]"/>
             <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
-                <Details 
-                    position='Software Engineer'
-                    company='Google'
-                    companyLink='www.google.com'
-                    time='2022-Present'
-                    address='Mountain View, CA'
-                    work='Worked on a team responsible for developing new features for Google&apos;s 
-                    search engine, including improving the accuracy and relevance of search results and 
-                    developing new tools for data analysis and visualization.'
+                <Details
+                    position='Backend / Web Developer'
+                    company='Prestiter S.p.A.'
+                    companyLink='https://www.prestiter.it'
+                    time='2018 - Present'
+                    address='Italy'
+                    work='Backend and web development on enterprise PHP applications: design and security hardening
+                    (OWASP) of REST/SOAP/GraphQL APIs, CI/CD pipelines with GitHub Actions, MySQL query optimization,
+                    mentoring and TDD with PHPUnit in an Agile/Scrum environment.'
                 />
-                <Details 
-                    position='Intern'
-                    company='Facebook'
-                    companyLink='www.facebook.com'
-                    time='Summer 2021'
-                    address='Menlo Park, CA'
-                    work='Worked on a team responsible for developing a new mobile app feature that allowed users to create and 
-                    share short-form video content, including designing and implementing a new user interface and developing 
-                    the backend infrastructure to support the feature.'
-                />
-
-                <Details 
-                    position='Software Developer'
-                    company='Amazon'
-                    companyLink='www.amazon.com'
-                    time='2020-2021'
-                    address='Seattle, WA'
-                    work='Worked on a team responsible for developing Amazon&apos;s mobile app, including implementing new features such 
-                    as product recommendations and user reviews, and optimizing the app&apos;s performance and reliability.'
-                />
-
-                <Details 
-                    position='Software Developer Intern'
-                    company='Microsoft'
-                    companyLink='www.microsoft.com'
-                    time='Summer 2019'
-                    address='Redmond, WA'
-                    work='Worked on a team responsible for developing new features for Microsoft&apos;s Windows operating system, 
-                    including implementing a new user interface for a system settings panel and optimizing the performance of 
-                    a core system component.'
-                />
-                <Details 
-                    position='Teaching Assistant'
-                    company='MIT'
-                    companyLink='www.mit.com'
-                    time='Fall 2018'
-                    address='Massachusetts Ave, Cambridge, MA'
-                    work='Assisted in teaching a course on computer programming, held office hours to help students with assignments, 
-                    and graded exams and assignments.'
+                <Details
+                    position='Quality Department'
+                    company='Fiat Chrysler Automobiles'
+                    companyLink='#'
+                    time='1998 - 2018'
+                    address='Termoli, Italy'
+                    work='Quality control and supplier auditing. A background that built process rigor and attention to
+                    quality, now applied to software development.'
                 />
             </ul>
         </div>

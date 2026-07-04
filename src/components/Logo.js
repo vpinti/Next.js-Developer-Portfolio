@@ -1,21 +1,20 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 import {motion} from 'framer-motion'
 
-const MotionLink = motion(Link)
+const MotionLink = motion.create(Link)
 
 const Logo = () => {
   return (
     <div className='flex items-center justify-center mt-2'>
         <MotionLink href='/'
-        className='w-16 h-16 bg-dark text-light flex items-center justify-center 
-        rounded-full text-2xl font-bold border border-solid border-transparent dark:border-light'
-        whileHover={{
-            backgroundColor: ["#121212", "rgba(131,58,180,1)","rgba(253,29,29,1)","rgba(252,176,69,1)","rgba(131,58,180,1)", "#121212"],
-            transition: {duration:1, repeat: Infinity}
-        }}
+        className='w-16 h-16 flex items-center justify-center rounded-full overflow-hidden
+        bg-light dark:bg-dark border border-solid border-dark/15 dark:border-light/25 shadow-sm'
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.95 }}
         >
-         VP
+         <Image src='/images/vp-logo.png' alt='Vittorio Pinti' width={64} height={64} className='w-11 h-11 object-contain' priority />
         </MotionLink>
     </div>
   )
