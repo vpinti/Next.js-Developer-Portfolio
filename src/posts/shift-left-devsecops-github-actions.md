@@ -4,24 +4,24 @@ date: "January 15, 2026"
 coverImage: "/images/articles/shift-left-devsecops-github-actions.svg"
 coverImageWidth: 800
 coverImageHeight: 600
-excerpt: "Security shouldn't be a gate at the end of a project. With GitHub Actions you can catch vulnerabilities on every pull request. Here's how to shift security left."
+excerpt: "DevSecOps means catching vulnerabilities on every pull request, not at the end. Learn how to shift security left with GitHub Actions."
 category: "DevOps"
 tags: ["CI/CD", "DevSecOps", "GitHub Actions", "Security"]
 ---
 
-For a long time, security was something that happened at the very end: the code was finished, then a security team reviewed it, often finding problems that were expensive to fix so late. "Shift-left" is the idea of moving those checks earlier — ideally onto every pull request, so problems are caught while they're still cheap to fix.
+For a long time, security was something that happened at the very end: the code was finished, then a security team reviewed it, often finding problems that were expensive to fix so late. "Shift-left" is the idea of moving those checks earlier — ideally onto every pull request, so problems are caught while they're still cheap to fix. This is the core practice behind DevSecOps.
 
 The good news is that if you already use GitHub Actions for tests, adding security checks is a small step. Let's look at what's worth automating and how.
 
 ## Table of contents
 
-1. [What "shift-left" really means](#what-shift-left-really-means)
+1. [What shift-left DevSecOps really means](#what-shift-left-devsecops-really-means)
 2. [Dependency and secret scanning](#dependency-and-secret-scanning)
 3. [Static analysis (SAST)](#static-analysis-sast)
 4. [A minimal secure pipeline](#a-minimal-secure-pipeline)
 5. [Failing the build on purpose](#failing-the-build-on-purpose)
 
-## What "shift-left" really means
+## What shift-left DevSecOps really means
 
 Picture your development timeline running left (writing code) to right (running in production). Traditionally, security checks sat far to the right. Shift-left simply means moving them to the left — into the pull request, before code is merged.
 
@@ -38,7 +38,7 @@ Both can run automatically on every push.
 
 ## Static analysis (SAST)
 
-SAST stands for Static Application Security Testing. It reads your source code (without running it) and flags risky patterns — things like SQL built from string concatenation, or user input reaching a dangerous function. Think of it as a spell-checker for security bugs. It won't catch everything, but it catches a lot for very little effort.
+SAST stands for Static Application Security Testing. It reads your source code (without running it) and flags risky patterns — things like SQL built from string concatenation, or user input reaching a dangerous function. Think of it as a spell-checker for security bugs. It won't catch everything, but it catches a lot for very little effort. If you build APIs, pair SAST with the [OWASP API Security Top 10](/blogs/owasp-api-security-top-10) to cover the risks static analysis tends to miss.
 
 ## A minimal secure pipeline
 
@@ -76,7 +76,7 @@ Start gentle if you have an older codebase — you might begin with warnings, fi
 
 ## Conclusion
 
-You don't need a dedicated security team to write safer software. By moving a few automated checks into your pull requests, you turn security from a rare, stressful event into a quiet, everyday habit. Start with dependency and secret scanning today, add static analysis next, and let your pipeline quietly protect every change you ship.
+You don't need a dedicated security team to write safer software. By moving a few automated checks into your pull requests, you turn DevSecOps from a rare, stressful event into a quiet, everyday habit. Start with dependency and secret scanning today, add static analysis next, and let your pipeline quietly protect every change you ship. For more on this topic, browse the rest of my [DevOps articles](/category/DevOps).
 
 ## Resources
 

@@ -4,12 +4,12 @@ date: "December 03, 2025"
 coverImage: "/images/articles/owasp-api-security-top-10.svg"
 coverImageWidth: 800
 coverImageHeight: 600
-excerpt: "APIs are where most modern apps get attacked. Here are the most common risks from the OWASP API Security Top 10, explained with concrete fixes you can apply today."
+excerpt: "APIs are where modern apps get attacked. Learn the top OWASP API security risks and concrete fixes you can apply to your REST or GraphQL API today."
 category: "Security"
 tags: ["API", "OWASP", "Security", "GraphQL"]
 ---
 
-Most applications today are really just a thin client talking to an API. That means the API is where your real business logic — and your real risk — lives. Attackers know this, which is why API attacks have become one of the most common ways systems get breached.
+Most applications today are really just a thin client talking to an API. That means the API is where your real business logic — and your real risk — lives. Attackers know this, which is why API attacks have become one of the most common ways systems get breached. That makes API security a top concern for anyone building backends.
 
 The OWASP API Security Top 10 is a well-known list of the risks that show up again and again. In this article we'll walk through the ones I see most often, with practical fixes. It applies whether your API speaks REST, GraphQL, or SOAP.
 
@@ -20,7 +20,7 @@ The OWASP API Security Top 10 is a well-known list of the risks that show up aga
 3. [Broken authentication](#broken-authentication)
 4. [Too much data: excessive exposure](#too-much-data-excessive-exposure)
 5. [Mass assignment](#mass-assignment)
-6. [A practical checklist](#a-practical-checklist)
+6. [A practical API security checklist](#a-practical-api-security-checklist)
 
 ## Why APIs are a favorite target
 
@@ -60,7 +60,7 @@ Authentication is *who you are*; authorization is *what you can do*. Broken auth
 - Weak or missing rate limiting on login, allowing password guessing.
 - Secrets and API keys committed to the repository.
 
-Sensible defaults: short-lived access tokens with refresh tokens, rate limiting on authentication endpoints, and secrets kept in environment variables — never in code.
+Sensible defaults: short-lived access tokens with refresh tokens, rate limiting on authentication endpoints, and secrets kept in environment variables — never in code. Catching leaked secrets and other issues early in CI is exactly what a [shift-left security pipeline](/blogs/shift-left-devsecops-github-actions) is for.
 
 ## Too much data: excessive exposure
 
@@ -88,7 +88,7 @@ PATCH /api/users/me
 
 If your code blindly saves everything, the user just made themselves an admin. Always whitelist which fields can be written, and ignore the rest.
 
-## A practical checklist
+## A practical API security checklist
 
 You don't need to memorize all ten risks to be much safer. Start here:
 
@@ -98,7 +98,7 @@ You don't need to memorize all ten risks to be much safer. Start here:
 4. Writes accept only an explicit allowlist of fields.
 5. Secrets live in environment variables, never in code.
 
-Security isn't a feature you add at the end — it's a habit you apply on every endpoint. If you build these five checks into your normal workflow, you'll have closed the doors attackers reach for first. Start small, be consistent, and your APIs will be far harder to break.
+Good API security isn't a feature you add at the end — it's a habit you apply on every endpoint. If you build these five checks into your normal workflow, you'll have closed the doors attackers reach for first. And if your API also exposes LLM features, remember that [prompt injection](/blogs/adding-llm-features-to-a-php-backend) is a newer class of risk worth planning for. Start small, be consistent, and your APIs will be far harder to break.
 
 ## Resources
 

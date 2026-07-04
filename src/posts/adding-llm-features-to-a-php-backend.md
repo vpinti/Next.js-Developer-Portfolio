@@ -1,16 +1,16 @@
 ---
-title: "Adding LLM Features to a PHP Backend Without Getting Burned"
+title: "Adding LLM Features in PHP Without Getting Burned"
 date: "March 25, 2026"
 coverImage: "/images/articles/adding-llm-features-to-a-php-backend.svg"
 coverImageWidth: 800
 coverImageHeight: 600
-excerpt: "Adding AI features to a backend is mostly just calling an API — but the safety and cost pitfalls are new. Here's how to integrate an LLM into a PHP app the sensible way."
+excerpt: "Adding an LLM in PHP is mostly an API call — but safety and cost pitfalls are new. Learn to integrate AI into a PHP backend the sensible way."
 category: "AI"
 tags: ["AI", "LLM", "API", "PHP"]
 featured: true
 ---
 
-Almost every product now wants an "AI feature" of some kind. The good news for backend developers is that, technically, calling a large language model (LLM) is mostly just an HTTP request to an external API — something you already know how to do. The new part isn't the plumbing; it's the safety, cost, and reliability concerns that come with it.
+Almost every product now wants an "AI feature" of some kind. The good news for backend developers is that, technically, calling a large language model (LLM) is mostly just an HTTP request to an external API — something you already know how to do. When you add an LLM in PHP, the new part isn't the plumbing; it's the safety, cost, and reliability concerns that come with it.
 
 Let's look at how to add an LLM feature to a PHP backend without the common mistakes.
 
@@ -20,7 +20,7 @@ Let's look at how to add an LLM feature to a PHP backend without the common mist
 2. [Retrieval: giving the model context](#retrieval-giving-the-model-context)
 3. [Prompt injection is the new SQL injection](#prompt-injection-is-the-new-sql-injection)
 4. [Cost and latency control](#cost-and-latency-control)
-5. [A safe request flow](#a-safe-request-flow)
+5. [A safe LLM request flow in PHP](#a-safe-llm-request-flow-in-php)
 
 ## Treat the model as an external API
 
@@ -44,7 +44,7 @@ The uncomfortable truth is there's no perfect fix, but sensible defenses help a 
 - Never let the model's output trigger dangerous actions directly (like running a query or sending an email) without a check in between.
 - Treat everything the model returns as untrusted data — validate it before using it.
 
-The mindset is the same one you use against SQL injection: never trust input, and never let it become a command.
+The mindset is the same one you use against SQL injection: never trust input, and never let it become a command. For a broader checklist on hardening the endpoints that expose these features, see the [OWASP API Security Top 10](/blogs/owasp-api-security-top-10).
 
 ## Cost and latency control
 
@@ -55,7 +55,7 @@ Two things that bite teams after launch:
 
 Caching helps too: if many users ask the same thing, cache the answer.
 
-## A safe request flow
+## A safe LLM request flow in PHP
 
 Putting it together, a solid backend flow looks like this:
 
@@ -69,7 +69,7 @@ Putting it together, a solid backend flow looks like this:
 
 ## Conclusion
 
-Adding AI to your backend is less about magic and more about applying the good habits you already have: treat the model as an untrusted external service, guard your inputs and outputs, and keep an eye on cost. Do that, and you can ship AI features that are genuinely useful without the nasty surprises. Start small with one well-scoped feature, and grow from there.
+Adding an LLM in PHP is less about magic and more about applying the good habits you already have: treat the model as an untrusted external service, guard your inputs and outputs, and keep an eye on cost. Do that, and you can ship AI features that are genuinely useful without the nasty surprises. Start small with one well-scoped feature, and grow from there. For more on the topic, browse the rest of the [AI category](/category/AI).
 
 ## Resources
 

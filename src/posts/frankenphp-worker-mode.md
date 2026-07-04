@@ -1,23 +1,23 @@
 ---
-title: "FrankenPHP & Worker Mode: Making Legacy PHP Fast"
+title: "FrankenPHP Worker Mode: Making Legacy PHP Fast"
 date: "November 12, 2025"
 coverImage: "/images/articles/frankenphp-worker-mode.svg"
 coverImageWidth: 800
 coverImageHeight: 600
-excerpt: "PHP has a reputation for being slow to boot on every request. FrankenPHP and worker mode change that story — here is what they are and when they are worth it."
+excerpt: "PHP has a reputation for slow per-request boots. See how FrankenPHP worker mode fixes it — and when it is worth adopting."
 category: "PHP"
 tags: ["PHP", "FrankenPHP", "Performance", "DevOps"]
 ---
 
 For years, the mental model of a PHP application was simple: a request comes in, PHP boots up, runs your code, sends a response, and then throws everything away. The next request starts from zero. This "share nothing" model is easy to reason about and hard to leak memory with, but it also means you pay a startup cost on **every single request**.
 
-FrankenPHP is one of the projects trying to change that — without forcing you to rewrite your application. Let's look at what it actually does and when it makes sense.
+FrankenPHP is one of the projects trying to change that — without forcing you to rewrite your application. Its headline feature, FrankenPHP worker mode, is what actually moves the needle on PHP performance. Let's look at what it does and when it makes sense.
 
 ## Table of contents
 
 1. [The classic setup, briefly](#the-classic-setup-briefly)
 2. [What FrankenPHP is](#what-frankenphp-is)
-3. [Worker mode: boot once, serve many](#worker-mode-boot-once-serve-many)
+3. [FrankenPHP worker mode: boot once, serve many](#frankenphp-worker-mode-boot-once-serve-many)
 4. [The catch: state now leaks between requests](#the-catch-state-now-leaks-between-requests)
 5. [When is it worth it?](#when-is-it-worth-it)
 6. [Takeaways](#takeaways)
@@ -37,9 +37,9 @@ FrankenPHP is a modern application server for PHP, built on top of the Caddy web
 
 You can adopt point 1 without changing your code at all: FrankenPHP can run a normal PHP app exactly like FPM would. That alone simplifies your deployment. The interesting part is worker mode.
 
-## Worker mode: boot once, serve many
+## FrankenPHP worker mode: boot once, serve many
 
-The idea behind worker mode is straightforward. Instead of bootstrapping your framework on every request, you bootstrap it **once**, keep it in memory, and then loop: wait for a request, handle it, wait for the next one.
+The idea behind FrankenPHP worker mode is straightforward. Instead of bootstrapping your framework on every request, you bootstrap it **once**, keep it in memory, and then loop: wait for a request, handle it, wait for the next one.
 
 Conceptually, a worker script looks like this:
 
@@ -66,7 +66,7 @@ for ($i = 0; !$maxRequests || $i < $maxRequests; $i++) {
 }
 ```
 
-The expensive part — autoloading, reading config, building the container — happens before the loop. Inside the loop you only do the per-request work. For a heavy framework this can cut response times dramatically, because you've deleted the repeated bootstrap.
+The expensive part — autoloading, reading config, building the container — happens before the loop. Inside the loop you only do the per-request work. For a heavy framework this can cut response times dramatically, because you've deleted the repeated bootstrap. If you want to push PHP performance even further, techniques like [coroutines and fibers](/blogs/php-coroutines-and-fibers) build on the same "keep it in memory" mindset.
 
 Most frameworks already ship an integration so you don't hand-write this. Laravel has Octane (which supports FrankenPHP as a backend), and Symfony has a runtime component. You usually just install a package and point the server at it.
 
@@ -98,4 +98,4 @@ A sensible way to decide:
 - Worker mode keeps your app booted in memory and loops over requests — fast, but it breaks the "clean slate" assumption.
 - Audit global/static state and recycle workers to stay safe.
 
-You don't have to rewrite anything to start. Run your existing app on FrankenPHP in plain mode, measure, and reach for worker mode when the numbers say it's worth it.
+You don't have to rewrite anything to start. Run your existing app on FrankenPHP in plain mode, measure, and reach for FrankenPHP worker mode when the numbers say it's worth it.
