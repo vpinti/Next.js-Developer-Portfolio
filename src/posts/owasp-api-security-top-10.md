@@ -102,5 +102,5 @@ Good API security isn't a feature you add at the end — it's a habit you apply 
 
 ## Resources
 
-- OWASP API Security Project (the full Top 10 with detailed explanations)
-- Your framework's authorization docs (policies, gates, guards)
+- [OWASP API Security Project](https://owasp.org/API-Security/) (the full Top 10 with detailed explanations)
+- [Laravel authorization docs](https://laravel.com/docs/authorization) (policies and gates)

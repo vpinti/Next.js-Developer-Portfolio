@@ -28,6 +28,21 @@ An LLM call is just a request to a third-party service. That framing already tel
 
 So the model lives behind *your* backend. The frontend talks to your API; your API talks to the model. This gives you a place to add authentication, validation, rate limiting, and logging — exactly like any other integration.
 
+A minimal call, with the key in the environment and an explicit timeout, looks like this:
+
+```php
+$response = Http::withToken(env('LLM_API_KEY'))
+    ->timeout(20) // never let a slow model hang your request
+    ->post('https://api.provider.com/v1/messages', [
+        'model'    => 'claude-sonnet-5',
+        'messages' => [['role' => 'user', 'content' => $prompt]],
+    ]);
+
+$text = $response->json('content.0.text');
+```
+
+Notice there's no API key in the code and no unbounded wait — two of the most common mistakes when wiring up an LLM in PHP.
+
 ## Retrieval: giving the model context
 
 A model only knows what it was trained on plus what you send it. To answer questions about *your* data (a product catalog, internal docs), you use a pattern called retrieval-augmented generation, or RAG.
@@ -73,5 +88,5 @@ Adding an LLM in PHP is less about magic and more about applying the good habits
 
 ## Resources
 
-- Your model provider's API documentation
-- OWASP Top 10 for Large Language Model Applications
+- [Anthropic API documentation](https://docs.anthropic.com/) (example model provider)
+- [OWASP Top 10 for Large Language Model Applications](https://genai.owasp.org/llm-top-10/)

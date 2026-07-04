@@ -99,3 +99,9 @@ A sensible way to decide:
 - Audit global/static state and recycle workers to stay safe.
 
 You don't have to rewrite anything to start. Run your existing app on FrankenPHP in plain mode, measure, and reach for FrankenPHP worker mode when the numbers say it's worth it.
+
+## Resources
+
+- [FrankenPHP documentation](https://frankenphp.dev/docs/)
+- [FrankenPHP worker mode guide](https://frankenphp.dev/docs/worker/)
+- [Laravel Octane](https://laravel.com/docs/octane) (uses FrankenPHP as a backend)

@@ -82,5 +82,5 @@ PHP Fibers gave the language a proper, built-in way to pause and resume code —
 
 ## Resources
 
-- PHP manual: the Fiber class
-- Async PHP runtimes that build on Fibers (for real-world use)
+- [PHP manual: the Fiber class](https://www.php.net/manual/en/language.fibers.php)
+- [ReactPHP](https://reactphp.org/) and [AMPHP](https://amphp.org/) (async runtimes that build on Fibers)

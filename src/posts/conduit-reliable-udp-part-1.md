@@ -68,5 +68,5 @@ Since the project is still evolving, some details will change as I go — that's
 
 ## Resources
 
-- Conduit on GitHub: github.com/vpintidev/conduit
-- RFC 9000 (QUIC) — a real-world reliable protocol over UDP
+- [Conduit on GitHub](https://github.com/vpintidev/conduit)
+- [RFC 9000 (QUIC)](https://www.rfc-editor.org/rfc/rfc9000) — a real-world reliable protocol over UDP

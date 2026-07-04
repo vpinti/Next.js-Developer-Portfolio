@@ -80,6 +80,6 @@ You don't need a dedicated security team to write safer software. By moving a fe
 
 ## Resources
 
-- GitHub Actions documentation
-- Your language's audit tool (`composer audit`, `npm audit`)
-- OWASP guidance on CI/CD security
+- [GitHub Actions documentation](https://docs.github.com/en/actions)
+- [`composer audit`](https://getcomposer.org/doc/03-cli.md#audit) / [`npm audit`](https://docs.npmjs.com/cli/commands/npm-audit)
+- [OWASP Top 10 CI/CD Security Risks](https://owasp.org/www-project-top-10-ci-cd-security-risks/)
