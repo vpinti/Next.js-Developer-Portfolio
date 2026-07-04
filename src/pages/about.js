@@ -52,18 +52,20 @@ const about = () => {
                 <div className='col-span-3 xl:col-span-4 flex flex-col items-start justify-start md:order-2 md:col-span-8'>
                     <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>Biography</h2>
                     <p className='font-medium'>
-                        Hi, I&apos;m Vittorio Pinti, a Backend Developer with over 8 years of experience building
-                        enterprise web applications, specialized in APIs and CI/CD. I have solid experience in
-                        modernizing legacy systems.
+                        Hi, I&apos;m Vittorio Pinti, a Senior Backend Developer with over 8 years of experience building
+                        enterprise PHP web applications, with a strong focus on application security and DevSecOps:
+                        integrating security into CI/CD pipelines and building to OWASP guidelines.
                     </p>
                     <p className='my-4 font-medium'>
-                        At Prestiter I led the migration of the company CRM from Zend Framework 1 to PHP 8.2, designing
-                        a Laravel-style database migration system integrated into the CI/CD pipelines. I&apos;m the
-                        author of Pulsar (an open-source PHP MVC framework) and Conduit (a transport protocol over UDP,
-                        written in C).
+                        At Prestiter I proposed and led, as owner, the migration of the entire codebase from Zend
+                        Framework 1 to PHP 8.2 &#x2D; coordinating the team and delivering on deadline &#x2D; and
+                        designed a Laravel-style database migration system integrated into the CI/CD pipelines. I&apos;m
+                        also the author of Pulsar (an open-source PHP MVC framework) and Conduit (an experimental network
+                        protocol written in C).
                     </p>
                     <p className='font-medium'>
-                        Oracle Cloud Infrastructure certified, I have a strong focus on TDD, security (OWASP) and code
+                        Oracle Cloud Infrastructure certified, I keep sharpening my security skills through hands-on
+                        cyber paths (SOC, Security Engineering, DevSecOps), with a strong emphasis on TDD, OWASP and code
                         quality. A background in industrial quality control gave me process rigor and attention to
                         detail.
                     </p>

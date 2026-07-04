@@ -50,11 +50,11 @@ const Experience = () => {
                     companyLink='https://www.prestiter.it'
                     time='2018 - Present'
                     address='Italy'
-                    work='Development and evolution of the company CRM (Zend Framework/PHP). Led the migration of the
-                    entire codebase from Zend Framework 1 to PHP 8.2 and designed a Laravel-style database migration
-                    system integrated into the CI/CD pipelines (GitHub Actions). Design and security hardening (OWASP)
-                    of REST/SOAP/GraphQL APIs, MySQL query optimization, mentoring and TDD with PHPUnit in an
-                    Agile/Scrum environment.'
+                    work='Development and evolution of the company CRM (Zend Framework/PHP). Proposed and led as owner
+                    the migration of the entire codebase from Zend Framework 1 to PHP 8.2, coordinating the team and
+                    delivering on deadline, and designed a Laravel-style database migration system integrated into the
+                    CI/CD pipelines (GitHub Actions). Design and security hardening (OWASP) of REST/SOAP/GraphQL APIs,
+                    MySQL query optimization, mentoring and TDD with PHPUnit in an Agile/Scrum environment.'
                 />
                 <Details
                     position='Quality Department'
