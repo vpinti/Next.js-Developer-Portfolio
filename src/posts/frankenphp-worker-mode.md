@@ -13,6 +13,15 @@ For years, the mental model of a PHP application was simple: a request comes in,
 
 FrankenPHP is one of the projects trying to change that — without forcing you to rewrite your application. Let's look at what it actually does and when it makes sense.
 
+## Table of contents
+
+1. [The classic setup, briefly](#the-classic-setup-briefly)
+2. [What FrankenPHP is](#what-frankenphp-is)
+3. [Worker mode: boot once, serve many](#worker-mode-boot-once-serve-many)
+4. [The catch: state now leaks between requests](#the-catch-state-now-leaks-between-requests)
+5. [When is it worth it?](#when-is-it-worth-it)
+6. [Takeaways](#takeaways)
+
 ## The classic setup, briefly
 
 A traditional PHP stack looks like this: a web server (Nginx or Apache) talks to **PHP-FPM**, a process manager that keeps a pool of PHP workers ready. For each request, FPM hands the work to a worker, the worker bootstraps your framework (autoloading, config, service container, routes), runs the request, and tears it all down.

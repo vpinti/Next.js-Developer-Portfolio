@@ -89,6 +89,12 @@
     @apply text-accent-foreground font-medium hover:text-accent-foreground/80 transition-colors;
   }
 
+  /* I titoli resi cliccabili da rehype-autolink-headings devono sembrare
+     titoli, non link: ereditano colore e niente sottolineatura. */
+  .markdown-content :is(h1, h2, h3, h4, h5, h6) a {
+    @apply text-inherit no-underline hover:text-primary;
+  }
+
   .markdown-content code:not(pre > code) {
     @apply bg-muted text-muted-foreground rounded-md px-1.5 py-1 font-code text-sm;
   }
