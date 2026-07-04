@@ -10,7 +10,7 @@ import TransitionEffect from '@/components/TransitionEffect'
 
 const articles = ({ posts, featured }) => {
 
-    const FramerImage = motion(Image)
+    const FramerImage = motion.create(Image)
 
     const MovingImg = ({title, img, imgWidth, imgHeight, link}) => {
 
