@@ -9,11 +9,12 @@ const Logo = () => {
   return (
     <div className='flex items-center justify-center mt-2'>
         <MotionLink href='/'
-        className='flex items-center justify-center'
+        className='w-16 h-16 flex items-center justify-center rounded-full overflow-hidden
+        bg-light dark:bg-dark border border-solid border-dark/15 dark:border-light/25 shadow-sm'
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         >
-         <Image src='/images/vp-logo.png' alt='Vittorio Pinti' width={64} height={64} className='w-14 h-14 object-contain' priority />
+         <Image src='/images/vp-logo.png' alt='Vittorio Pinti' width={64} height={64} className='w-11 h-11 object-contain' priority />
         </MotionLink>
     </div>
   )
