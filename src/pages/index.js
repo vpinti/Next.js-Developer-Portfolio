@@ -16,12 +16,12 @@ export default function Home() {
         <title>Vittorio Pinti | Senior Backend Developer</title>
         <meta
           name="description"
-          content="Vittorio Pinti — Senior Backend Developer con oltre 8 anni di esperienza su applicazioni web enterprise, API, CI/CD e modernizzazione di sistemi legacy."
+          content="Vittorio Pinti — Senior Backend Developer with over 8 years of experience building enterprise web applications, APIs, CI/CD and legacy system modernization."
         />
         <meta property="og:title" content="Vittorio Pinti | Senior Backend Developer" />
         <meta
           property="og:description"
-          content="Backend Developer specializzato in API, CI/CD e modernizzazione di sistemi legacy."
+          content="Backend Developer specialized in APIs, CI/CD and legacy system modernization."
         />
       </Head>
 

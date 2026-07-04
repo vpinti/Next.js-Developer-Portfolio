@@ -12,7 +12,7 @@ export default function TagPage({ tag, posts }) {
     <>
     <Head>
       <title>{`Vittorio Pinti | Tag: ${tag}`}</title>
-      <meta name="description" content={`Articoli con il tag ${tag}`} />
+      <meta name="description" content={`Articles tagged ${tag}`} />
     </Head>
     <TransitionEffect />
     <div className="bg-background text-foreground min-h-screen dark:text-light">
@@ -52,7 +52,7 @@ export default function TagPage({ tag, posts }) {
                     <div className="flex items-center">
                       <CalendarDays className="w-4 h-4 mr-1.5" />
                       <time dateTime={post.date}>
-                        {new Date(post.date).toLocaleDateString("it-IT", {
+                        {new Date(post.date).toLocaleDateString("en-US", {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
@@ -61,7 +61,7 @@ export default function TagPage({ tag, posts }) {
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 mr-1.5" />
-                      <span>{post.readingTime} min di lettura</span>
+                      <span>{post.readingTime} min read</span>
                     </div>
                   </div>
                 </header>
@@ -71,14 +71,14 @@ export default function TagPage({ tag, posts }) {
                 <div className="mt-4">
                   <Link href={`/blogs/${post.slug}`}>
                     <Button variant="link" className="p-0 h-auto">
-                      Continua a leggere →
+                      Read more →
                     </Button>
                   </Link>
                 </div>
               </article>
             ))
           ) : (
-            <p>Nessun articolo trovato con questo tag.</p>
+            <p>No articles found with this tag.</p>
           )}
         </div>
       </main>

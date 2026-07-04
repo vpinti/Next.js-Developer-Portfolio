@@ -37,10 +37,10 @@ const about = () => {
   return (
     <>
     <Head>
-        <title>Vittorio Pinti | Chi sono</title>
-        <meta name='description' content='Chi è Vittorio Pinti: Senior Backend Developer, esperienza, competenze tecniche e percorso professionale.'/>
-        <meta property='og:title' content='Vittorio Pinti | Chi sono' />
-        <meta property='og:description' content='Senior Backend Developer: esperienza, competenze e percorso professionale.' />
+        <title>Vittorio Pinti | About</title>
+        <meta name='description' content='About Vittorio Pinti: Senior Backend Developer — experience, technical skills and professional background.'/>
+        <meta property='og:title' content='Vittorio Pinti | About' />
+        <meta property='og:description' content='Senior Backend Developer: experience, skills and professional background.' />
     </Head>
 
     <TransitionEffect />
@@ -52,18 +52,20 @@ const about = () => {
                 <div className='col-span-3 xl:col-span-4 flex flex-col items-start justify-start md:order-2 md:col-span-8'>
                     <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>Biography</h2>
                     <p className='font-medium'>
-                        Hi, I&apos;m Vittorio Pinti, a web developer and UI/UX designer with a passion for creating beautiful, functional, 
-                        and user-centered digital experiences. With 4 years of experience in the field. I am always looking for 
-                        new and innovative ways to bring my clients&apos; visions to life.
+                        Hi, I&apos;m Vittorio Pinti, a Backend Developer with over 8 years of experience building
+                        enterprise web applications, specialized in APIs and CI/CD. I have solid experience in
+                        modernizing legacy systems.
                     </p>
                     <p className='my-4 font-medium'>
-                        I believe that design is about more than just making things look pretty &#x2D; it&apos;s about solving problems and 
-                        creating intuitive, enjoyable experiences for users.
+                        At Prestiter I led the migration of the company CRM from Zend Framework 1 to PHP 8.2, designing
+                        a Laravel-style database migration system integrated into the CI/CD pipelines. I&apos;m the
+                        author of Pulsar (an open-source PHP MVC framework) and Conduit (a transport protocol over UDP,
+                        written in C).
                     </p>
                     <p className='font-medium'>
-                        Whether I&apos;m working on a website, mobile app, or 
-                        other digital product, I bring my commitment to design excellence and user-centered thinking to 
-                        every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.
+                        Oracle Cloud Infrastructure certified, I have a strong focus on TDD, security (OWASP) and code
+                        quality. A background in industrial quality control gave me process rigor and attention to
+                        detail.
                     </p>
                 </div>
                 <div className='col-span-3 xl:col-span-4 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light md:order-1 md:col-span-8'>
@@ -76,24 +78,24 @@ const about = () => {
                 <div className='col-span-2 xl:col-span-8 xl:flex-row flex flex-col items-end justify-between xl:items-center md:order-3'>
                     <div className='flex flex-col items-end justify-center xl:items-center'>
                         <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5l xs:text-4xl'>
-                            <AnimatedNumbers value={50} />+
-                        </span>
-                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>satisfied clients</h2>
-                    </div>
-
-                    <div className='flex flex-col items-end justify-center xl:items-center'>
-                        <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5l xs:text-4xl'>
-                        <AnimatedNumbers value={40} />+
-                        </span>
-                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>projects completed</h2>
-                    </div>
-
-                    <div className='flex flex-col items-end justify-center xl:items-center'>
-                        <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5l xs:text-4xl'>
-                        <AnimatedNumbers value={5} />+
+                            <AnimatedNumbers value={8} />+
                         </span>
                         <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>years of experience</h2>
-                    </div>                
+                    </div>
+
+                    <div className='flex flex-col items-end justify-center xl:items-center'>
+                        <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5l xs:text-4xl'>
+                        <AnimatedNumbers value={4} />+
+                        </span>
+                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>open-source projects</h2>
+                    </div>
+
+                    <div className='flex flex-col items-end justify-center xl:items-center'>
+                        <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5l xs:text-4xl'>
+                        <AnimatedNumbers value={3} />+
+                        </span>
+                        <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>cybersecurity paths</h2>
+                    </div>
 
                 </div>
             </div>

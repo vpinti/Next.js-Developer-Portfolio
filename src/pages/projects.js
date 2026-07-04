@@ -75,10 +75,10 @@ const projects = () => {
   return (
     <>
         <Head>
-            <title>Vittorio Pinti | Progetti</title>
-            <meta name='description' content='Progetti open-source di Vittorio Pinti: Pulsar, Conduit e altri.'/>
-            <meta property='og:title' content='Vittorio Pinti | Progetti' />
-            <meta property='og:description' content='Progetti open-source: Pulsar, Conduit e altri.' />
+            <title>Vittorio Pinti | Projects</title>
+            <meta name='description' content='Open-source projects by Vittorio Pinti: Pulsar, Conduit and more.'/>
+            <meta property='og:title' content='Vittorio Pinti | Projects' />
+            <meta property='og:description' content='Open-source projects: Pulsar, Conduit and more.' />
         </Head>
         <TransitionEffect />
         <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'> 

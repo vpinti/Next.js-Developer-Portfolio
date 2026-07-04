@@ -41,7 +41,7 @@ export default function BlogPost({ post }) {
                 <div className="flex items-center">
                   <CalendarDays className="w-4 h-4 mr-1.5" />
                   <time dateTime={post.date}>
-                    {new Date(post.date).toLocaleDateString("it-IT", {
+                    {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
@@ -50,7 +50,7 @@ export default function BlogPost({ post }) {
                 </div>
                 <div className="flex items-center">
                   <Clock className="w-4 h-4 mr-1.5" />
-                  <span>{post.readingTime} min di lettura</span>
+                  <span>{post.readingTime} min read</span>
                 </div>
               </div>
             </header>

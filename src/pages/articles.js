@@ -90,10 +90,10 @@ const articles = ({ posts, featured }) => {
   return (
     <>
         <Head>
-            <title>Vittorio Pinti | Articoli</title>
-            <meta name='description' content='Articoli di Vittorio Pinti su backend, API, CI/CD e sviluppo web.'/>
-            <meta property='og:title' content='Vittorio Pinti | Articoli' />
-            <meta property='og:description' content='Articoli su backend, API, CI/CD e sviluppo web.' />
+            <title>Vittorio Pinti | Articles</title>
+            <meta name='description' content='Articles by Vittorio Pinti on backend, APIs, CI/CD and web development.'/>
+            <meta property='og:title' content='Vittorio Pinti | Articles' />
+            <meta property='og:description' content='Articles on backend, APIs, CI/CD and web development.' />
         </Head>
         <TransitionEffect />
         <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
@@ -105,7 +105,7 @@ const articles = ({ posts, featured }) => {
                             key={post.slug}
                             title={post.title}
                             summary={post.excerpt}
-                            time={`${post.readingTime} min di lettura`}
+                            time={`${post.readingTime} min read`}
                             link={`/blogs/${post.slug}`}
                             img={post.coverImage}
                             imgWidth={post.coverImageWidth}

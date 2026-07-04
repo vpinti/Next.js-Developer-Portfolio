@@ -43,28 +43,26 @@ const Education = () => {
         <div className='w-[75%] mx-auto relative lg:w-[90%] md:w-full' ref={ref}>
             <motion.div style={{scaleY: scrollYProgress}} className="absolute left-9 top-0 w-[4px] h-full bg-dark dark:bg-light origin-top md:w-[2px] md:left-[30px] xs:left-[20px]"/>
             <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
-                <Details 
-                    type='Bachelor Of Science In Computer Science'
-                    time='2016-2020'
-                    place='Massachusetts Institute Of Technology (MIT)'
-                    info='Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial 
-                    Intelligence.'
+                <Details
+                    type='Computer Science'
+                    time='2015 - 2017'
+                    place='University of Molise'
+                    info='Computer science studies focused on programming fundamentals, databases and systems.'
                 />
 
-                <Details 
-                    type='Master Of Computer Science'
-                    time='2020-2022 '
-                    place='Stanford University'
-                    info='Completed a master&apos;s project on deep learning, developing a new neural network architecture for natural 
-                    language understanding.'
+                <Details
+                    type='Diploma in Electronics'
+                    time='ITIS "E. Majorana"'
+                    place='Termoli, Italy'
+                    info='Technical diploma in electronics.'
                 />
 
-                <Details 
-                    type='Online Coursework'
-                    time='2016-2020'
-                    place='Coursera And EdX'
-                    info='Completed coursework in advanced topics such as Reinforcement Learning, Computer Vision, and Machine 
-                    Learning Engineering.'
+                <Details
+                    type='Cybersecurity - TryHackMe'
+                    time='Completed paths'
+                    place='SOC Level 1 · Security Engineer · DevSecOps'
+                    info='Hands-on paths on security operations, security engineering and integrating security into
+                    development pipelines.'
                 />
             </ul>
         </div>

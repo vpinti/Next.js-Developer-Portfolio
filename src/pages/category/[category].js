@@ -11,10 +11,10 @@ export default function CategoryPage({ category, posts }) {
   return (
     <>
       <Head>
-        <title>{`Vittorio Pinti | Categoria: ${category}`}</title>
+        <title>{`Vittorio Pinti | Category: ${category}`}</title>
         <meta
           name="description"
-          content={`Articoli nella categoria ${category}`}
+          content={`Articles in the ${category} category`}
         />
       </Head>
       <TransitionEffect />
@@ -22,7 +22,7 @@ export default function CategoryPage({ category, posts }) {
         <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="mb-8">
             <h1 className="font-headline text-4xl font-extrabold">
-              Categoria: {category}
+              Category: {category}
             </h1>
           </div>
           <div className="space-y-12">
@@ -57,7 +57,7 @@ export default function CategoryPage({ category, posts }) {
                       <div className="flex items-center">
                         <CalendarDays className="w-4 h-4 mr-1.5" />
                         <time dateTime={post.date}>
-                          {new Date(post.date).toLocaleDateString("it-IT", {
+                          {new Date(post.date).toLocaleDateString("en-US", {
                             year: "numeric",
                             month: "long",
                             day: "numeric",
@@ -66,7 +66,7 @@ export default function CategoryPage({ category, posts }) {
                       </div>
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1.5" />
-                        <span>{post.readingTime} min di lettura</span>
+                        <span>{post.readingTime} min read</span>
                       </div>
                     </div>
                   </header>
@@ -76,14 +76,14 @@ export default function CategoryPage({ category, posts }) {
                   <div className="mt-4">
                     <Link href={`/blogs/${post.slug}`}>
                       <Button variant="link" className="p-0 h-auto">
-                        Continua a leggere →
+                        Read more →
                       </Button>
                     </Link>
                   </div>
                 </article>
               ))
             ) : (
-              <p>Nessun articolo trovato in questa categoria.</p>
+              <p>No articles found in this category.</p>
             )}
           </div>
         </main>

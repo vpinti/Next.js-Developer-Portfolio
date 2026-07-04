@@ -27,20 +27,28 @@ const Skills = () => {
         lg:p-6 md:p-4 xs:text-xs xs:p-2'
         whileHover={{scale:1.05}}
         >
-          Web
+          Backend
         </motion.div>
-        <Skill name='HTML' x='-25vw' y='2vw' />
-        <Skill name='CSS' x='-5vw' y='-10vw' />
-        <Skill name='Javascript' x='20vw' y='6vw' />
-        <Skill name='ReactJS' x='0vw' y='12vw' />
-        <Skill name='NextJS' x='-20vw' y='-15vw' />
-        <Skill name='Laravel' x='15vw' y='-12vw' />
-        <Skill name='Typescript' x='32vw' y='-5vw' />
-        <Skill name='MySQL' x='0vw' y='-20vw' />
-        <Skill name='Tailwind CSS' x='-25vw' y='18vw' />
-        <Skill name='Bootstrap CSS' x='18vw' y='18vw' />
-        <Skill name='PHP' x='-35vw' y='-5vw' />
-        <Skill name='JAMStack' x='0vw' y='24vw' />
+        <Skill name='PHP' x='-22vw' y='2vw' />
+        <Skill name='C' x='-6vw' y='-8vw' />
+        <Skill name='JavaScript' x='22vw' y='4vw' />
+        <Skill name='TypeScript' x='30vw' y='-6vw' />
+        <Skill name='Node.js' x='7vw' y='11vw' />
+        <Skill name='Laravel' x='-18vw' y='-14vw' />
+        <Skill name='Zend Framework' x='16vw' y='-13vw' />
+        <Skill name='REST API' x='34vw' y='6vw' />
+        <Skill name='GraphQL' x='2vw' y='-19vw' />
+        <Skill name='MySQL' x='-30vw' y='16vw' />
+        <Skill name='Docker' x='20vw' y='17vw' />
+        <Skill name='CI/CD' x='-36vw' y='-6vw' />
+        <Skill name='OWASP' x='-2vw' y='23vw' />
+        <Skill name='ReactJS' x='-12vw' y='11vw' />
+        <Skill name='NextJS' x='12vw' y='-3vw' />
+        <Skill name='HTML' x='-30vw' y='-15vw' />
+        <Skill name='CSS' x='-13vw' y='-20vw' />
+        <Skill name='Tailwind CSS' x='30vw' y='16vw' />
+        <Skill name='Bootstrap' x='-38vw' y='8vw' />
+        <Skill name='JAMStack' x='16vw' y='24vw' />
       </div>
     </>
 
