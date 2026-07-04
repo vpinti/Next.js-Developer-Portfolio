@@ -90,8 +90,10 @@ const articles = ({ posts, featured }) => {
   return (
     <>
         <Head>
-            <title>Vittorio Pinti | Articles Page</title>
-            <meta name='description' content=''/>
+            <title>Vittorio Pinti | Articoli</title>
+            <meta name='description' content='Articoli di Vittorio Pinti su backend, API, CI/CD e sviluppo web.'/>
+            <meta property='og:title' content='Vittorio Pinti | Articoli' />
+            <meta property='og:description' content='Articoli su backend, API, CI/CD e sviluppo web.' />
         </Head>
         <TransitionEffect />
         <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>

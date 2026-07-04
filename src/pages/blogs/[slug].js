@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/Badge";
@@ -9,6 +10,14 @@ import TransitionEffect from '@/components/TransitionEffect'
 export default function BlogPost({ post }) {
   return (
     <>
+    <Head>
+      <title>{`${post.title} | Vittorio Pinti`}</title>
+      <meta name="description" content={post.excerpt} />
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={post.title} />
+      <meta property="og:description" content={post.excerpt} />
+      {post.coverImage && <meta property="og:image" content={post.coverImage} />}
+    </Head>
     <TransitionEffect />
     <div className="bg-background text-foreground dark:bg-background-dark dark:text-foreground-dark min-h-screen dark:text-light">
       <main className="py-8 sm:py-16">

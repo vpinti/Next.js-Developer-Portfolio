@@ -37,8 +37,10 @@ const about = () => {
   return (
     <>
     <Head>
-        <title>Vittorio Pinti | About Page</title>
-        <meta name='description' content=''/>
+        <title>Vittorio Pinti | Chi sono</title>
+        <meta name='description' content='Chi è Vittorio Pinti: Senior Backend Developer, esperienza, competenze tecniche e percorso professionale.'/>
+        <meta property='og:title' content='Vittorio Pinti | Chi sono' />
+        <meta property='og:description' content='Senior Backend Developer: esperienza, competenze e percorso professionale.' />
     </Head>
 
     <TransitionEffect />

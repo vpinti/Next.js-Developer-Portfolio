@@ -22,6 +22,9 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:site_name" content="Vittorio Pinti" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className={`${montserrat.variable} font-mont  dark:bg-dark bg-light w-full min-h-screen`}>
         <NavBar />

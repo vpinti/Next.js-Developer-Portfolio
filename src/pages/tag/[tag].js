@@ -1,13 +1,21 @@
+import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/Badge";
 import { Button } from "@/components/Button";
 import { getAllPosts, getAllTags } from "@/lib/posts";
 import { CalendarDays, Clock } from "lucide-react";
+import TransitionEffect from "@/components/TransitionEffect";
 
 export default function TagPage({ tag, posts }) {
   return (
-    <div className="bg-background text-foreground min-h-screen">
+    <>
+    <Head>
+      <title>{`Vittorio Pinti | Tag: ${tag}`}</title>
+      <meta name="description" content={`Articoli con il tag ${tag}`} />
+    </Head>
+    <TransitionEffect />
+    <div className="bg-background text-foreground min-h-screen dark:text-light">
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="font-headline text-4xl font-extrabold">Tag: {tag}</h1>
@@ -75,6 +83,7 @@ export default function TagPage({ tag, posts }) {
         </div>
       </main>
     </div>
+    </>
   );
 }
 
