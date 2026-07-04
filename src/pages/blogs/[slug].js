@@ -51,8 +51,7 @@ export default function BlogPost({ post }) {
                 src={post.coverImage}
                 alt={`Copertina per ${post.title}`}
                 fill
-                objectFit="cover"
-                data-ai-hint="programming technology"
+                className="object-cover"
               />
             </div>
 

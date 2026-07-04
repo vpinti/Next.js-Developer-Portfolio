@@ -27,11 +27,11 @@ export default function App({ Component, pageProps }) {
         <NavBar />
         <AnimatePresence mode='wait'>
           <Component key={router.asPath} {...pageProps} />
-          <SpeedInsights />
-          <Analytics />
         </AnimatePresence>
         <Footer />
       </main>
+      <SpeedInsights />
+      <Analytics />
     </>
   )
 }

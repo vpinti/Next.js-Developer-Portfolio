@@ -21,8 +21,8 @@ export default function TagPage({ tag, posts }) {
                     <Image
                       src={post.coverImage}
                       alt={`Copertina per ${post.title}`}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </Link>
