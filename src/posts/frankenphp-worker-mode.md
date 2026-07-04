@@ -1,7 +1,7 @@
 ---
 title: "FrankenPHP & Worker Mode: Making Legacy PHP Fast"
 date: "November 12, 2025"
-coverImage: "https://placehold.co/800x600.png?text=FrankenPHP"
+coverImage: "/images/articles/frankenphp-worker-mode.svg"
 coverImageWidth: 800
 coverImageHeight: 600
 excerpt: "PHP has a reputation for being slow to boot on every request. FrankenPHP and worker mode change that story — here is what they are and when they are worth it."
