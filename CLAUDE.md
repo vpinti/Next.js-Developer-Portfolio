@@ -41,7 +41,7 @@ Note: `content/blogs/` is unused by the blog pipeline; posts live in `src/posts/
 ## Conventions
 
 - Commit messages: Conventional Commits, in Italian (see git log). Code comments are mixed Italian/English.
-- **Site content and UI text: English only** (professional site). Applies to pages, components, SEO/meta, dates (`toLocaleDateString("en-US", ...)`), strings like "min read"/"Read more". Some legacy posts in `src/posts/` are Italian — do not translate existing authored content, but new posts are English.
+- **Site content and UI text: English only** (professional site). Applies to pages, components, SEO/meta, dates (`toLocaleDateString("en-US", ...)`), strings like "min read"/"Read more", and all blog posts in `src/posts/` (the previously Italian legacy posts have been converted to English).
 
 ## Blog article authoring
 
