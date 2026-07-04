@@ -8,7 +8,7 @@ import TransitionEffect from '@/components/TransitionEffect'
 
 const projects = () => {
 
-    const FeaturedProject = ({ type, title, summary, tech, github, link }) => {
+    const FeaturedProject = ({ type, title, summary, tech, github, link, repos }) => {
         return (
             <article className='relative w-full flex flex-col rounded-3xl rounded-br-2xl border border-solid border-dark
                 bg-light shadow-2xl p-12 dark:bg-dark dark:border-light
@@ -27,10 +27,22 @@ const projects = () => {
                         ))}
                     </ul>
                 )}
-                <div className='mt-4 flex items-center'>
-                    <Link href={github} target='_blank' className='w-10' aria-label={`${title} on GitHub`}>{" "}<GithubIcon /></Link>
+                <div className='mt-4 flex items-center flex-wrap gap-3'>
+                    {repos ? (
+                        repos.map((r) => (
+                            <Link key={r.href} href={r.href} target='_blank'
+                                className='flex items-center gap-2 rounded-lg bg-dark text-light py-2 px-4 text-base font-semibold
+                                dark:bg-light dark:text-dark'
+                                aria-label={`${title} ${r.label} on GitHub`}
+                            >
+                                <span className='w-5 inline-block'><GithubIcon /></span>{r.label}
+                            </Link>
+                        ))
+                    ) : (
+                        <Link href={github} target='_blank' className='w-10' aria-label={`${title} on GitHub`}>{" "}<GithubIcon /></Link>
+                    )}
                     {link && (
-                        <Link href={link} target='_blank' className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold
+                        <Link href={link} target='_blank' className='rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold
                             dark:bg-light dark:text-dark sm:px-4 sm:text-base'
                         >Visit Project</Link>
                     )}
@@ -84,9 +96,13 @@ const projects = () => {
                             <FeaturedProject
                                 type='Featured Project · Open Source · PHP'
                                 title='Pulsar Framework'
-                                summary='A modular PHP MVC framework with an integrated ORM, advanced routing, OWASP-compliant security and performance optimizations.'
+                                summary='A modular PHP MVC framework with an integrated ORM, advanced routing, OWASP-compliant security and performance optimizations. Split into a core framework and a starter skeleton to bootstrap new applications.'
                                 tech={['PHP', 'MVC', 'ORM', 'OWASP']}
-                                github='https://github.com/vpinti'
+                                github='https://github.com/vpinti/framework'
+                                repos={[
+                                    { label: 'Core', href: 'https://github.com/vpinti/framework' },
+                                    { label: 'Skeleton', href: 'https://github.com/vpinti/Pulsar-Skeleton' },
+                                ]}
                             />
                         </div>
                         <div className='col-span-12'>
