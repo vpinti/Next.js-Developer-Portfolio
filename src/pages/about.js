@@ -57,11 +57,9 @@ const about = () => {
                         integrating security into CI/CD pipelines and building to OWASP guidelines.
                     </p>
                     <p className='my-4 font-medium'>
-                        At Prestiter I proposed and led, as owner, the migration of the entire codebase from Zend
-                        Framework 1 to PHP 8.2 &#x2D; coordinating the team and delivering on deadline &#x2D; and
-                        designed a Laravel-style database migration system integrated into the CI/CD pipelines. I&apos;m
-                        also the author of Pulsar (an open-source PHP MVC framework) and Conduit (an experimental network
-                        protocol written in C).
+                        I&apos;m the author of Pulsar (an open-source PHP MVC framework) and Conduit (an experimental
+                        network protocol written in C) &#x2D; projects that reflect my interest in the technical
+                        fundamentals, from framework design to systems programming.
                     </p>
                     <p className='font-medium'>
                         Oracle Cloud Infrastructure certified, I keep sharpening my security skills through hands-on
