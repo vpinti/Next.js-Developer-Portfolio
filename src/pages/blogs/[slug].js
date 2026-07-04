@@ -55,13 +55,15 @@ export default function BlogPost({ post }) {
               </div>
             </header>
 
-            <div className="relative w-full h-96 rounded-lg overflow-hidden my-8 shadow-lg">
+            <div className="relative w-full rounded-lg overflow-hidden my-8 shadow-lg">
               <Image
                 src={post.coverImage}
                 alt={`Cover for ${post.title}`}
-                fill
+                width={post.coverImageWidth}
+                height={post.coverImageHeight}
                 sizes="(max-width: 1024px) 100vw, 896px"
-                className="object-cover"
+                className="w-full h-auto"
+                priority
               />
             </div>
 
