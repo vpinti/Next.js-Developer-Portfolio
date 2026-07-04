@@ -1,9 +1,9 @@
 ---
 title: "Reliable Delivery over UDP: Building Conduit in C (Part 1)"
 date: "July 04, 2026"
-coverImage: "/images/articles/conduit-reliable-udp-part-1.svg"
-coverImageWidth: 800
-coverImageHeight: 600
+coverImage: "/images/articles/conduit-reliable-udp-part-1.png"
+coverImageWidth: 1344
+coverImageHeight: 768
 excerpt: "Why build reliable UDP when TCP exists? Part 1 of Conduit, my open-source transport protocol in C: the design behind channel-based delivery."
 category: "Networking"
 tags: ["C", "Networking", "UDP", "Protocols"]
