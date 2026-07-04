@@ -1,9 +1,9 @@
 ---
 title: "Understanding PHP Fibers and Coroutines"
 date: "February 20, 2026"
-coverImage: "/images/articles/php-coroutines-and-fibers.svg"
-coverImageWidth: 800
-coverImageHeight: 600
+coverImage: "/images/articles/php-coroutines-and-fibers.png"
+coverImageWidth: 1349
+coverImageHeight: 675
 excerpt: "PHP 8.1 introduced Fibers for coroutines and cooperative concurrency. Learn what PHP Fibers are, how they work, and when to use them."
 category: "PHP"
 tags: ["PHP", "Fibers", "Async", "Concurrency"]
