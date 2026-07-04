@@ -53,8 +53,9 @@ const about = () => {
                     <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>Biography</h2>
                     <p className='font-medium'>
                         Hi, I&apos;m Vittorio Pinti, a Senior Backend Developer with over 8 years of experience building
-                        enterprise PHP web applications, with a strong focus on application security and DevSecOps:
-                        integrating security into CI/CD pipelines and building to OWASP guidelines.
+                        enterprise PHP web applications. I specialize in API design and CI/CD pipelines, with a solid
+                        attention to application security (OWASP) and code quality (TDD), plus experience in legacy
+                        modernization and internal tooling.
                     </p>
                     <p className='my-4 font-medium'>
                         I&apos;m the author of Pulsar (an open-source PHP MVC framework) and Conduit (an experimental
@@ -62,10 +63,9 @@ const about = () => {
                         fundamentals, from framework design to systems programming.
                     </p>
                     <p className='font-medium'>
-                        Oracle Cloud Infrastructure certified, I keep sharpening my security skills through hands-on
-                        cyber paths (SOC, Security Engineering, DevSecOps), with a strong emphasis on TDD, OWASP and code
-                        quality. A background in industrial quality control gave me process rigor and attention to
-                        detail.
+                        Oracle Cloud Infrastructure certified, I also invest in security through hands-on cyber paths
+                        (SOC, Security Engineering, DevSecOps). A background in industrial quality control gave me
+                        process rigor and attention to detail.
                     </p>
                 </div>
                 <div className='col-span-3 xl:col-span-4 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light md:order-1 md:col-span-8'>
